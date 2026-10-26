@@ -19,7 +19,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         database: config.get<string>('DB_DATABASE'),
         //entities: [__dirname + '/../../../**/*.entity{.ts,.js}'],
         autoLoadEntities: true,
-        synchronize: config.get<string>('NODE_ENV') !== 'production', // ojo con esto en prod
+        //synchronize: config.get<string>('NODE_ENV') !== 'production', // ojo con esto en prod
+        synchronize: false, // las tablas se crean a mano en MySQL,
       }),
     }),
   ],
